@@ -1,0 +1,189 @@
+=================ERROR  26/9/2023, 21:02:47=============
+ {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":219,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(fany_garcia13@hotmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Cecilia","Arellano","fany_garcia13@hotmail.com","$2b$10$575s0APjey5/nDHMj0sQbuGXrGhnf8hdS8EQWCDm80VZF2ieSWMHK","2023-09-27 03:02:46.824 +00:00","2023-09-27 03:02:46.824 +00:00"]},"original":{"length":219,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(fany_garcia13@hotmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Cecilia","Arellano","fany_garcia13@hotmail.com","$2b$10$575s0APjey5/nDHMj0sQbuGXrGhnf8hdS8EQWCDm80VZF2ieSWMHK","2023-09-27 03:02:46.824 +00:00","2023-09-27 03:02:46.824 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"}
+{"expose":true,"statusCode":400,"status":400,"body":"{\r\n    \"userId\": 24.\r\n    \"participantId\": 14\r\n}","type":"entity.parse.failed"}
+
+=================ERROR  28/9/2023, 12:33:24=============
+ =================ERROR  28/9/2023, 12:33:54=============
+ {}
+
+=================ERROR  28/9/2023, 12:35:24=============
+ {"name":"SequelizeDatabaseError","parent":{"length":199,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Participant.conversationId».","position":"38","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 3 AND \"Participant\".\"UserId\" IN (24);"},"original":{"length":199,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Participant.conversationId».","position":"38","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 3 AND \"Participant\".\"UserId\" IN (24);"},"sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 3 AND \"Participant\".\"UserId\" IN (24);","parameters":{}}
+
+=================ERROR  28/9/2023, 12:36:16=============
+ {"name":"SequelizeDatabaseError","parent":{"length":199,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Participant.conversationId».","position":"38","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 4 AND \"Participant\".\"UserId\" IN (24);"},"original":{"length":199,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Participant.conversationId».","position":"38","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 4 AND \"Participant\".\"UserId\" IN (24);"},"sql":"SELECT \"senderId\", \"conversationId\", \"ConversationId\", \"UserId\" FROM \"Participants\" AS \"Participant\" WHERE \"Participant\".\"ConversationId\" = 4 AND \"Participant\".\"UserId\" IN (24);","parameters":{}}
+
+=================ERROR  28/9/2023, 20:44:23=============
+ {}
+
+=================ERROR  28/9/2023, 20:45:51=============
+ {}
+
+=================ERROR  28/9/2023, 20:46:53=============
+ {}
+
+=================ERROR  28/9/2023, 21:41:05=============
+ {"name":"SequelizeDatabaseError","parent":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"original":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';","parameters":{}}
+
+=================ERROR  28/9/2023, 21:41:16=============
+ {"name":"SequelizeDatabaseError","parent":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"original":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';","parameters":{}}
+
+{"name":"SequelizeDatabaseError","parent":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"original":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';","parameters":{}}
+
+=================ERROR  28/9/2023, 21:41:46=============
+ =================ERROR  28/9/2023, 21:41:55=============
+ {"name":"SequelizeDatabaseError","parent":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"original":{"length":127,"name":"error","severity":"ERROR","code":"22P02","position":"557","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" WHERE \"Participant\".\"UserId\" = 'id';","parameters":{}}
+
+=================ERROR  28/9/2023, 21:50:16=============
+ {"name":"SequelizeDatabaseError","parent":{"length":240,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Conversation->Participants->User.firstname».","position":"634","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';"},"original":{"length":240,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Conversation->Participants->User.firstname».","position":"634","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';","parameters":{}}
+
+=================ERROR  28/9/2023, 21:50:22=============
+ {"name":"SequelizeDatabaseError","parent":{"length":240,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Conversation->Participants->User.firstname».","position":"634","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';"},"original":{"length":240,"name":"error","severity":"ERROR","code":"42703","hint":"Probablemente quiera hacer referencia a la columna «Conversation->Participants->User.firstname».","position":"634","file":"parse_relation.c","line":"3666","routine":"errorMissingColumn","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firtsname\" AS \"Conversation.Participants.User.firtsname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = '1';","parameters":{}}
+
+{"status":401,"message":"No authorization header"}
+
+=================ERROR  2/10/2023, 19:59:27=============
+ {"status":401,"message":"No authorization header"}
+
+=================ERROR  2/10/2023, 19:59:39=============
+ =================ERROR  2/10/2023, 19:59:49=============
+ {"status":401,"message":"No authorization header"}
+
+{"status":401,"message":"No authorization header"}
+
+=================ERROR  2/10/2023, 20:02:01=============
+ =================ERROR  2/10/2023, 20:03:01=============
+ {"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+{"status":401,"error":"Email verification needed","message":"Look at your email messages for a verification email"}
+
+=================ERROR  2/10/2023, 20:03:28=============
+ =================ERROR  2/10/2023, 21:31:19=============
+ {}
+
+=================ERROR  2/10/2023, 21:31:39=============
+ {}
+
+=================ERROR  2/10/2023, 21:36:32=============
+ {}
+
+=================ERROR  2/10/2023, 21:36:51=============
+ {}
+
+=================ERROR  2/10/2023, 21:37:05=============
+ {}
+
+=================ERROR  2/10/2023, 21:37:26=============
+ {}
+
+=================ERROR  2/10/2023, 21:39:21=============
+ {}
+
+=================ERROR  2/10/2023, 21:39:41=============
+ {}
+
+=================ERROR  2/10/2023, 21:39:49=============
+ {}
+
+=================ERROR  2/10/2023, 21:40:09=============
+ {}
+
+=================ERROR  2/10/2023, 21:41:30=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:41:49=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:45:34=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:45:54=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:47:59=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:49:56=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:50:16=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:53:18=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 21:53:38=============
+ =================ERROR  2/10/2023, 22:00:56=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 22:01:17=============
+ =================ERROR  2/10/2023, 22:12:53=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 22:13:14=============
+ =================ERROR  2/10/2023, 22:13:24=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 22:13:24=============
+ =================ERROR  2/10/2023, 22:15:41=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:40:55.000Z"}
+
+=================ERROR  2/10/2023, 22:16:26=============
+ {}
+
+=================ERROR  2/10/2023, 22:16:46=============
+ {}
+
+=================ERROR  2/10/2023, 22:18:46=============
+ {}
+
+=================ERROR  3/10/2023, 20:52:13=============
+ {"status":400,"error":"File not accepted","message":"Just images files are allowed","storageErrors":[]}
+
+=================ERROR  3/10/2023, 20:52:30=============
+ {"status":400,"error":"File not accepted","message":"Just images files are allowed","storageErrors":[]}
+
+=================ERROR  3/10/2023, 20:52:53=============
+ {"name":"MulterError","message":"File too large","code":"LIMIT_FILE_SIZE","field":"avatar","storageErrors":[]}
+
+=================ERROR  3/10/2023, 20:56:14=============
+ {"status":400,"error":"File not accepted","message":"Just images files are allowed","storageErrors":[]}
+
+=================ERROR  3/10/2023, 20:57:51=============
+ {"name":"MulterError","message":"File too large","code":"LIMIT_FILE_SIZE","field":"avatar","storageErrors":[]}
+
+{"status":400,"error":"File not accepted","message":"Only images files are allowed","storageErrors":[]}
+
+=================ERROR  3/10/2023, 20:59:26=============
+ =================ERROR  3/10/2023, 21:50:56=============
+ {"status":401,"message":"No authorization header"}
+
+{"status":401,"message":"No authorization header"}
+
+=================ERROR  3/10/2023, 21:51:44=============
+ =================ERROR  3/10/2023, 21:55:41=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+=================ERROR  3/10/2023, 21:55:44=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+=================ERROR  3/10/2023, 21:55:49=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+=================ERROR  3/10/2023, 21:56:01=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+=================ERROR  3/10/2023, 21:56:04=============
+ {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
+
+=================ERROR  3/10/2023, 21:56:11=============
+ 
