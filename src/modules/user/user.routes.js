@@ -1,15 +1,13 @@
 const {Router} =  require('express');
-const { registerUser, validateEmailUser, /*reverifyEmail*/ getAllUsers, uploadAvatar} = require('./user.controllers');
+const { registerUser, validateEmailUser,  getAllUsers, uploadAvatar} = require('./user.controllers');
 const { loginUser, } = require('./user.controllers');
 const authenticate = require('../../middlewares/auth.middlerware');
 const { registerUserValidator, loginValidation } = require("./user.validators")
-const { User, Participant } = require("../../models");
+//const { User, Participant } = require("../../models");
 const upload = require('../../middlewares/imageUpload.middlerware');
-
-
 const router = Router()
 
-router.route('/') //api/v1/users
+router.route('/') 
 .get(authenticate, getAllUsers)
 .post(registerUserValidator, registerUser)
 
@@ -20,7 +18,7 @@ router.route('/') //api/v1/users
           model: Participant,
         },
       })
-      //establece el header content-type: application/json
+      
       res.json(result);
     } catch (error) {
       next(error);
@@ -34,8 +32,7 @@ router.route('/login')
 
 router.post('/validate', validateEmailUser)
 
-/*router.route('/reverify-email')
-.post(reverifyEmail)*/
+
 
 
 module.exports = router

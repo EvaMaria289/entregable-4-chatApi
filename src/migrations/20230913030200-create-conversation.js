@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Users',  //nuestra llave foranea
+          model: 'Users',  
           key: 'id'
         }
       },

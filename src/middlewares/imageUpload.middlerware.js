@@ -10,7 +10,7 @@ const upload = multer({
       },
     }),
     limits: {
-      fileSize: 500 * 1024, // 500 kB
+      fileSize: 500 * 1024, 
     },
     fileFilter: (req, file, cb) => {
       if (!file.mimetype.includes("image")) {
@@ -23,6 +23,4 @@ const upload = multer({
       cb(null, true);
     },
   });
-
-
-  module.exports= upload
+ module.exports= upload

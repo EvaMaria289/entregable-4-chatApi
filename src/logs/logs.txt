@@ -186,4 +186,6 @@
 {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T05:13:02.000Z"}
 
 =================ERROR  3/10/2023, 21:56:11=============
- 
+ =================ERROR  6/10/2023, 12:01:03=============
+ {"status":400,"error":["El password debe ser minimo 8 caracteres, una mayuscula, una minuscula y un acaracter especial"]}
+

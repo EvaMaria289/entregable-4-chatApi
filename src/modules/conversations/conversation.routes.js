@@ -1,17 +1,21 @@
-const Router = require('express');
-const { createConversation, createGroupConversation, getAllConversations } = require('./conversation.controllers');
+const {Router} = require('express');
+const { 
+    createConversation,
+     createGroupConversation,
+      getAllConversations 
+    } = require('./conversation.controllers');
+
+const authenticate = require('../../middlewares/auth.middlerware');
 
 const router = Router()
-//crear conversaciones
-router.post('/', createConversation)
 
-router.post('/group', createGroupConversation )
+router.post('/', authenticate, createConversation);
 
-router.get('/:id', getAllConversations)
+router.post('/group',authenticate, createGroupConversation );
 
-//crear conversaciones grupales
-//traer todas las conversaciones
-//obtener una conversacion con todos los mensajes
+router.get('/:id',authenticate, getAllConversations);
+
+module.exports = router;
 
 
 

@@ -1,9 +1,9 @@
-// importamos las clases de errores de sequelize
+
 const fs = require('node:fs/promises')
 const path = require('node:path')
 const { ConnectionError, ValidationError, DatabaseError } = require ('sequelize')
 
-//mostrar errores en la consola
+
 const errorLogger = (err, req, res, next) => {
   const date = new Date().toLocaleString()
   console.log(err)
@@ -21,7 +21,7 @@ const ormErrorHandler = (err, req, res, next) => {
     message: err.name
   })
  }
- //verificamos si el error fue creado con la base Validation Error
+ 
  if(err instanceof ValidationError) {
   return res.status(400).json({
     error: err.name,
@@ -37,8 +37,7 @@ const ormErrorHandler = (err, req, res, next) => {
   })
  }
 }
-//error
-//{status, err, message}
+
 const errorHandler = (err, req, res, next) => {
     const {status, ...error} = err
    res.status(err.status || 500).json(error)
@@ -52,8 +51,6 @@ const notFoundErrorHandler = (req, res) => {
    })
 }
 
-
-
 module.exports = {
     errorLogger,
     errorHandler,
@@ -61,4 +58,3 @@ module.exports = {
     ormErrorHandler
 }
 
-//escribir un manejador de errores para jsonwebtoken

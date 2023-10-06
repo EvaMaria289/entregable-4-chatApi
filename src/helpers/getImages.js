@@ -1,9 +1,8 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 
-
-async function getImages(dirPath) { //dir path es una ruta de src
-    //directorio donde estan las imagenes
+async function getImages(dirPath) { 
+    
     const formats = ['.png', '.gif', '.jpg', '.jpeg', '.webp', '.svg']
     const imagesPath = path.join(__dirname, '..', dirPath)
     const images = await fs.readdir(imagesPath)
@@ -15,8 +14,5 @@ async function getImages(dirPath) { //dir path es una ruta de src
     }))
     
 }
-
-
-
 
 module.exports = getImages

@@ -1,6 +1,5 @@
 const { errorLogger, errorHandler,  notFoundErrorHandler, ormErrorHandler} = require('../middlewares/errors.middleware');
 
-
 const errorRoutes =  (app) => {
     app.use(errorLogger)
     app.use(ormErrorHandler)

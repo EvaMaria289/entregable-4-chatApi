@@ -9,13 +9,9 @@ const {Model} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
-      // define association here
+     
       User.hasMany(models.Message, {foreignKey: 'senderId'})
       User.hasMany(models.Conversation, {foreignKey: 'createdBy'})
       User.belongsToMany(models.Conversation, {through: 'Participant'})
@@ -34,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
-    hooks: { //para que no muestre la contraseña, se renderiza antes de que se crea el usuario
+    hooks: { 
       beforeCreate: async (user, options) => {
         const hashed = await bcrypt.hash(user.password, 10)
         user.password = hashed

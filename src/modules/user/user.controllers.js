@@ -1,7 +1,7 @@
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-//const sendWelcomeEmail = require('../../helpers/sendMail');
+
 require("dotenv").config();
 
 const getAllUsers = async (req, res, next) => {
@@ -24,8 +24,7 @@ const registerUser = async (req, res, next) => {
 
     try {
         const newUser = req.body
-        //validacion de datos
-        //realizar consulta a la base de datos inncesaria
+       
         
         await User.create( newUser )
         res.status(201).end()
@@ -49,10 +48,10 @@ const loginUser = async(req, res, next) => {
             error: 'User does not exist mid',
             message: 'You need register before login'
           }
-            //lanzar un nuevo error
+       
 
         }
-        //contraseña en user.password
+        
         const isValidPassword = await bcrypt.compare(password, user.password)
         if(!isValidPassword) {
           throw{
@@ -71,7 +70,7 @@ const loginUser = async(req, res, next) => {
           
           }
         }
-        //generando el token
+        
          
          const copyUser = {...user.dataValues}
          delete copyUser.password
@@ -81,7 +80,7 @@ const loginUser = async(req, res, next) => {
             expiresIn: '1h',
          })
 
-         //copyUser token
+         
 
          copyUser.token = token
          res.json(copyUser)
@@ -107,7 +106,7 @@ const validateEmailUser = async (req, res, next) => {
     })
     const user = await User.findOne( {
         where: { email }
-    }) //instancia de este usuario
+    }) 
 
     if(user.validEmail) {
       throw {
@@ -128,18 +127,6 @@ const validateEmailUser = async (req, res, next) => {
     }
   }
 
-  /*const reverifyEmail =async (req, res) => {
-    try {
-       const { email } = req.body 
-
-       sendWelcomeEmail(email, data )
-       res.status(201).json({ message: 'nuevo token'})
-    } catch (error) {
-        res.status(400).json(error)  
-        
-    }
-  }
-*/
 
 const uploadAvatar = async (req, res, next) => {
   try {
@@ -155,4 +142,4 @@ const uploadAvatar = async (req, res, next) => {
   }
 }
 
-module.exports = { registerUser, loginUser, validateEmailUser, /*reverifyEmail */ getAllUsers, uploadAvatar}
+module.exports = { registerUser, loginUser, validateEmailUser,  getAllUsers, uploadAvatar}

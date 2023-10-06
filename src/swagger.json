@@ -1,0 +1,636 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Chat_API",
+      "contact": {},
+      "version": "1.0"
+    },
+    "paths": {
+      "/api/v1/users": {
+        "post": {
+          "tags": [
+            "user"
+          ],
+          "summary": "register",
+          "operationId": "register",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/registerrequest"
+                    },
+                    {
+                      "example": {
+                        "firstname": "Eva",
+                        "lastname": "Gutierrez",
+                        "email": "evamaria@hotmail.com",
+                        "password": "Academlo123%"
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "firstname": "Eva",
+                  "lastname": "Gutierrez",
+                  "email": "evamaria@hotmail.com",
+                  "password": "Academlo123%"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        },
+        "get": {
+          "tags": [
+            "user"
+          ],
+          "summary": "getAllUsers",
+          "operationId": "getAllUsers",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
+      },
+      "/api/v1/users/login": {
+        
+        "post": {
+          "tags": [
+            "user"
+          ],
+          "summary": "login user",
+          "operationId": "loginuser",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/loginuserrequest"
+                    },
+                    {
+                      "example": {
+                        "email": "maria-2828@hotmail.com",
+                        "password": "Academlo123%"
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "email": "maria-2828@hotmail.com",
+                  "password": "Academlo123%"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/users": {
+        "get": {
+          "tags": [
+            "user"
+          ],
+          "summary": "example",
+          "operationId": "example",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/reverify-email": {
+        "post": {
+          "tags": [
+            "user"
+          ],
+          "summary": "reverify-email",
+          "operationId": "reverify-email",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/reverify-email-request"
+                    },
+                    {
+                      "example": {
+                        "email": "maria-129@outlook.com",
+                        "firstname": "Maria",
+                        "lastname": "Leal"
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "email": "marias-129@outlook.com",
+                  "firstname": "Maria",
+                  "lastname": "Leal"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
+      },
+      "/api/v1/conversations": {
+        "post": {
+          "tags": [
+            "conversations"
+          ],
+          "summary": "create conversation",
+          "operationId": "createconversation",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/createconversationrequest"
+                    },
+                    {
+                      "example": {
+                        "userId": 1,
+                        "participantId": 1
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "userId": 1,
+                  "participantId": 1
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
+      },
+      "/api/v1/conversations/group": {
+        "post": {
+          "tags": [
+            "conversations"
+          ],
+          "summary": "conversation group",
+          "operationId": "conversationgroup",
+          "parameters": [],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/conversationgrouprequest"
+                    },
+                    {
+                      "example": {
+                        "userId": 1,
+                        "participantsIds": [
+                          3,
+                          4,
+                          5
+                        ],
+                        "title": "chatNode"
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "userId": 1,
+                  "participantsIds": [
+                    3,
+                    4,
+                    5
+                  ],
+                  "title": "chatNode"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
+      },
+      "/api/v1/conversations/{id}": {
+        "get": {
+          "tags": [
+            "conversations"
+          ],
+          "summary": "get all conversations",
+          "operationId": "getallconversations",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "",
+              "required": true,
+              "style": "simple",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false
+        }
+      },
+      "/api/v1/messages/conversation/{id}": {
+        "post": {
+          "tags": [
+            "message"
+          ],
+          "summary": "getConversation",
+          "operationId": "getConversation",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "",
+              "required": true,
+              "style": "simple",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "example": 7
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/getConversationRequest"
+                    },
+                    {
+                      "example": {
+                        "content": "como estan?",
+                        "senderId": 5
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "content": "como estan?",
+                  "senderId": 5
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "get": {
+          "tags": [
+            "message"
+          ],
+          "summary": "get conversation message",
+          "operationId": "getconversationmessage",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "",
+              "required": true,
+              "style": "simple",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/users/{id}": {
+        "put": {
+          "tags": [
+            "Misc"
+          ],
+          "summary": "test-upload",
+          "operationId": "test-upload",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "",
+              "required": true,
+              "style": "simple",
+              "schema": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "avatar"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "avatar": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "registerrequest": {
+          "title": "registerrequest",
+          "required": [
+            "firstname",
+            "lastname",
+            "email",
+            "password"
+          ],
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "firstname": "Eva",
+            "lastname": "Gutierrez",
+            "email": "evamaria@hotmail.com",
+            "password": "Academlo123%"
+          }
+        },
+        "loginuserrequest": {
+          "title": "loginuserrequest",
+          "required": [
+            "email",
+            "password"
+          ],
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "email": "evamaria@hotmail.com",
+            "password": "Academlo123%"
+          }
+        },
+        "reverify-email-request": {
+          "title": "reverify-email-request",
+          "required": [
+            "email",
+            "firstname",
+            "lastname"
+          ],
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "email": "maria-129@outlook.com",
+            "firstname": "Maria",
+            "lastname": "Leal"
+          }
+        },
+        "createconversationrequest": {
+          "title": "createconversationrequest",
+          "required": [
+            "userId",
+            "participantId"
+          ],
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "participantId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "example": {
+            "userId": 1,
+            "participantId": 1
+          }
+        },
+        "conversationgrouprequest": {
+          "title": "conversationgrouprequest",
+          "required": [
+            "userId",
+            "participantsIds",
+            "title"
+          ],
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "participantsIds": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "description": ""
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "userId": 1,
+            "participantsIds": [
+              3,
+              4,
+              5
+            ],
+            "title": "chatNode"
+          }
+        },
+        "getConversationRequest": {
+          "title": "getConversationRequest",
+          "required": [
+            "content",
+            "senderId"
+          ],
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "senderId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "example": {
+            "content": "como estan?",
+            "senderId": 5
+          }
+        }
+      },
+      "securitySchemes": {
+        "bearer": {
+          "type": "http",
+          "scheme": "bearer"
+        }
+      }
+    },
+    "security": [],
+    "tags": [
+      {
+        "name": "user"
+      },
+      {
+        "name": "conversations"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "name": "Misc",
+        "description": ""
+      }
+    ]
+  }

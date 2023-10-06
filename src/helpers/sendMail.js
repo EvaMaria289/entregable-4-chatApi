@@ -23,23 +23,23 @@ const getTemplate = async (templatePath, templateVar) => {
 }
 
 const sendWelcomeEmail = async (email, data) => {
-    //general el token 
+     
     const token = jwt.sign({email}, process.env.JWT_EMAIL_SECRET, {
         expiresIn : "3d",
         algorithm: "HS512",
+       
     })
     
-    //renderizar el template, encontrar la ruta de mi archivo
+   
     template = await getTemplate('../views/welcome/welcome-email.ejs', {
-     ...data, token })
+     ...data, token,
+     url: process.env.FRONT_URL,
+    });
 
-     //Obtener las imagenes a adjuntar
-     //crear funcion para obtener el arreglo de imagenes de manera automatica
+    
      const attachments = await getImages('/views/welcome/images')
     
     
-
-    //enviar el correo
     sendMail(email, 'Bienvenido a academlo chat', template, attachments)
 
 }
