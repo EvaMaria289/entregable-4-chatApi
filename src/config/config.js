@@ -4,7 +4,7 @@ module.exports = {
   development: {
     username: "postgres",
     password: "root",
-    database: "chat_db",
+    database: "chat-db",
     host: "localhost",
     dialect: "postgres",
     loggins:false,
